@@ -5,6 +5,8 @@
 float playerPositionX = 0.f;
 float playerPositionY = 0.f;
 
+
+
 internalVariable void simulateGame(Input* input) {
 	clearScreen(0xff5500);
 	if (pressed(BUTTON_UP)) playerPositionY += 1.f;
@@ -12,7 +14,8 @@ internalVariable void simulateGame(Input* input) {
 	if (pressed(BUTTON_LEFT)) playerPositionX -= 1.f;
 	if (pressed(BUTTON_RIGHT)) playerPositionX += 1.f;
 
+
 	drawRectangle(playerPositionX, playerPositionY, 1, 1, 0x00ff22);
-	drawRectangle(30, 30, 5, 5, 0xffff22);
-	drawRectangle(-20, 20, 8, 3, 0xffff22);
+	drawRectangle(playerPositionX -12, playerPositionY -3, 5, 5, 0xffff22);
+	drawRectangle(playerPositionX +15, playerPositionY +9, 8, 3, 0xffffaa);
 }
